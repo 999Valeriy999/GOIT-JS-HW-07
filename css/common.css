@@ -11,10 +11,10 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
- 
+
 }
 
-ul, li  {
+ul,
+li {
   list-style-type: none;
 }
-
