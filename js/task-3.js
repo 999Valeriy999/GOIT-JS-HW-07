@@ -18,8 +18,5 @@ alert (`Hello ${userName}`)
 }
 }
 
-   
-
-
 
 
