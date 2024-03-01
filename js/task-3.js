@@ -1,4 +1,3 @@
-
 const userName =document.querySelector("#name-input");
 const outName =document.querySelector("#name-output");
 
@@ -9,4 +8,5 @@ function handleInput(event){
 
     else {outName.textContent = event.currentTarget.value.trim()}
 }
+
 
