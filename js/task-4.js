@@ -8,10 +8,10 @@ function handleSubmit(event) {
     email: elements.email.value,
     password: elements.password.value,
   };
-  if (info === "") {
+  if (email && password === " ") {
     alert("All form fields must be filled in");
   } else {
-    console.log(info);
+    console.log(email.password);
   }
   event.currentTarget.reset();
 }
