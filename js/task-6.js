@@ -31,7 +31,7 @@ function createBoxes(amount) {
   }
 }
 btnDestroy.addEventListener("click", destroyBox); //слухач на кнопку destroy
-// функція видалення
+// функція для видалення
 function destroyBox() {
   const btnDestroy = (divEl.innerHTML = " "); // видалення квадратиків
 }
