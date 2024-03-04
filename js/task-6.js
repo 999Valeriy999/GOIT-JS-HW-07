@@ -1,6 +1,15 @@
 const createBtn = document.querySelector("data-create"); // константа для кнопки create
 const box = document.querySelector("#boxes"); //константа для діва щоб створювало квадратик
 const btnDestroy = document.querySelector("data-destroy"); // константа для кнопки destroy
+const parsed = document.querySelector.input;
+parsed.addEventListener = ("input", inputValue);
+function inputValue(parsed) {
+  const parsed = parseInt(greate, 10); // константа щоб перетворити значення інпута на число
+  // перевірка інпута на коректне число
+  if (parsed > 0) {
+    createBoxes(parsed);
+  }
+}
 createBtn.addEventListener("click", createBoxes); // слухач на кнопку create
 function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
@@ -20,15 +29,12 @@ function createBoxes(amount) {
       .toString(16)
       .padStart(6, 0)}`;
   } /*функція зміни кольору*/
+
   function createBoxes(event) {
     event.preventDefault(); //функція щоб не перезавантажувалась сторінка
   }
+
   const greate = input.value; // константа для інпута
-  const parsed = parseInt(greate, 10); // константа щоб перетворити значення інпута на число
-  // перевірка інпута на коректне число
-  if (parsed > 0) {
-    createBoxes(parsed);
-  }
 }
 btnDestroy.addEventListener("click", destroyBox); //слухач на кнопку destroy
 // функція для видалення
