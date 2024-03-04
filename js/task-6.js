@@ -10,7 +10,6 @@ function inputValue(parsed) {
     createBoxes(parsed);
   }
 }
-createBtn.addEventListener("click", createBoxes); // слухач на кнопку create
 function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
     // Створення нового div елементу (блоку)
@@ -21,21 +20,21 @@ function createBoxes(amount) {
     // Встановлення випадкового кольору фону для блоку за допомогою функції getRandomHexColor()
     box.style.backgroundColor = getRandomHexColor();
     // Додавання створеного блоку до елементу з id "boxes"
-    document.body.append(box);
+    boxes.append(box);
   }
-
-  function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, 0)}`;
-  } /*функція зміни кольору*/
-
-  function createBoxes(event) {
-    event.preventDefault(); //функція щоб не перезавантажувалась сторінка
-  }
-
-  const greate = input.value; // константа для інпута
 }
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+} /*функція зміни кольору*/
+
+function createBoxes(event) {
+  event.preventDefault(); //функція щоб не перезавантажувалась сторінка
+}
+
+const greate = input.value; // константа для інпута
+
 btnDestroy.addEventListener("click", destroyBox); //слухач на кнопку destroy
 // функція для видалення
 function destroyBox() {
