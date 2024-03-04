@@ -4,7 +4,7 @@ const destroyBtn = document.querySelector("[data-destroy]"); // констант
 const input = document.querySelector("input");
 input.addEventListener("input", inputValue);
 function inputValue() {
-  const inputValue = input.value;
+  const inputValue = input.value; // дістаємо значення з інпута
   const parsedValue = parseInt(inputValue, 10); // константа для перетворення значення інпута на число
   // перевірка інпута на коректне число
   if (!isNaN(parsedValue) && parsedValue > 0) {
