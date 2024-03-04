@@ -1,9 +1,10 @@
 const createBtn = document.querySelector("data-create"); // константа для кнопки create
 const box = document.querySelector("#boxes"); //константа для діва щоб створювало квадратик
 const btnDestroy = document.querySelector("data-destroy"); // константа для кнопки destroy
-const parsed = document.querySelector("input");
-parsed.addEventListener = ("input", inputValue);
-function inputValue(parsed) {
+const inpt = document.querySelector("input");
+inputt.addEventListener = ("input", inputValue);
+function inputValue(inpt) {
+  const greate = inpt.value;
   const parsed = parseInt(greate, 10); // константа щоб перетворити значення інпута на число
   // перевірка інпута на коректне число
   if (parsed > 0) {
