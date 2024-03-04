@@ -34,8 +34,6 @@ function createBoxes(event) {
   event.preventDefault(); //функція щоб не перезавантажувалась сторінка
 }
 
-const greate = input.value; // константа для інпута
-
 btnDestroy.addEventListener("click", destroyBox); //слухач на кнопку destroy
 // функція для видалення
 function destroyBox() {
