@@ -1,17 +1,30 @@
-const createBtn = document.querySelector("data-create"); // константа для кнопки create
-const box = document.querySelector("#boxes"); //константа для діва щоб створювало квадратик
-const btnDestroy = document.querySelector("data-destroy"); // константа для кнопки destroy
-const inpt = document.querySelector("input");
-inputt.addEventListener = ("input", inputValue);
-function inputValue(inpt) {
-  const greate = inpt.value;
-  const parsed = parseInt(greate, 10); // константа щоб перетворити значення інпута на число
+const createBtn = document.querySelector("[data-create]"); // константа для кнопки create
+const boxContainer = document.querySelector("#boxes"); // константа для div, в якому будуть створюватися блоки
+const destroyBtn = document.querySelector("[data-destroy]"); // константа для кнопки destroy
+const input = document.querySelector("input");
+input.addEventListener("input", inputValue);
+function inputValue() {
+  const inputValue = input.value;
+  const parsedValue = parseInt(inputValue, 10); // константа для перетворення значення інпута на число
   // перевірка інпута на коректне число
-  if (parsed > 0) {
-    createBoxes(parsed);
+  if (!isNaN(parsedValue) && parsedValue > 0) {
+    createBtn.disabled = false; // Розблокувати кнопку "Create", якщо введено коректне число
+  } else {
+    createBtn.disabled = true; // Заблокувати кнопку "Create", якщо введено некоректне число
+  }
+}
+createBtn.addEventListener("click", onCreateButton);
+function onCreateButton() {
+  const inputValue = input.value;
+  const parsedValue = parseInt(inputValue, 10); // константа для перетворення значення інпута на число
+  // перевірка інпута на коректне число
+  if (!isNaN(parsedValue) && parsedValue > 0) {
+    createBoxes(parsedValue);
   }
 }
 function createBoxes(amount) {
+  // Очистити попередні блоки перед створенням нових
+  boxContainer.innerHTML = "";
   for (let i = 0; i < amount; i++) {
     // Створення нового div елементу (блоку)
     const box = document.createElement("div");
@@ -20,22 +33,17 @@ function createBoxes(amount) {
     box.style.height = 30 + 10 * i + "px";
     // Встановлення випадкового кольору фону для блоку за допомогою функції getRandomHexColor()
     box.style.backgroundColor = getRandomHexColor();
-    // Додавання створеного блоку до елементу з id "boxes"
-    boxes.append(box);
+    // Додавання створеного блоку до контейнера
+    boxContainer.append(box);
   }
 }
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}`;
-} /*функція зміни кольору*/
-
-function createBoxes(event) {
-  event.preventDefault(); //функція щоб не перезавантажувалась сторінка
+    .padStart(6, "0")}`;
 }
-
-btnDestroy.addEventListener("click", destroyBox); //слухач на кнопку destroy
-// функція для видалення
-function destroyBox() {
-  const btnDestroy = (divEl.innerHTML = " "); // видалення квадратиків
+destroyBtn.addEventListener("click", destroyBoxes);
+function destroyBoxes() {
+  // Очищення вмісту контейнера, що призведе до видалення всіх створених блоків
+  boxContainer.innerHTML = "";
 }
