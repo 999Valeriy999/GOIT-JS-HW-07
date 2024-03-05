@@ -12,9 +12,11 @@ function inputValue() {
   } else {
     createBtn.disabled = true; // Заблокувати кнопку "Create", якщо введено некоректне число
   }
+  input.value = "";
 }
 createBtn.addEventListener("click", onCreateButton);
 function onCreateButton() {
+  boxContainer.innerHTML = "";
   const inputValue = input.value;
   const parsedValue = parseInt(inputValue, 10); // константа для перетворення значення інпута на число
   // перевірка інпута на коректне число
