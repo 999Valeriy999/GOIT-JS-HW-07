@@ -23,6 +23,7 @@ function onCreateButton() {
   if (!isNaN(parsedValue) && parsedValue > 0) {
     createBoxes(parsedValue);
   }
+  input.value = "";
 }
 function createBoxes(amount) {
   // Очистити попередні блоки перед створенням нових
