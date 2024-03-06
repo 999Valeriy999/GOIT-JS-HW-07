@@ -27,6 +27,8 @@ function onCreateButton() {
 function createBoxes(amount) {
   // Очистити попередні блоки перед створенням нових
   boxContainer.innerHTML = "";
+  // Створення фрагмента для групування елементів
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
     // Створення нового div елементу (блоку)
     const box = document.createElement("div");
@@ -35,9 +37,11 @@ function createBoxes(amount) {
     box.style.height = 30 + 10 * i + "px";
     // Встановлення випадкового кольору фону для блоку за допомогою функції getRandomHexColor()
     box.style.backgroundColor = getRandomHexColor();
-    // Додавання створеного блоку до контейнера
-    boxContainer.append(box);
+    // Додавання створеного блоку до фрагмента
+    fragment.appendChild(box);
   }
+  // Вставка усіх блоків однією операцією
+  boxContainer.appendChild(fragment);
 }
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
